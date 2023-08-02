@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = System.Object;
@@ -125,7 +126,7 @@ namespace Niantic.Lightship.AR.Utilities
 
             public void InvokeListeners()
             {
-                foreach (var listener in _listeners)
+                foreach (var listener in _listeners.ToList())
                     listener.CallbackFunction.Invoke();
             }
         }
